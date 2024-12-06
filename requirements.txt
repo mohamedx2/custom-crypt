@@ -1,0 +1,4 @@
+Flask==2.3.3
+Flask-JWT-Extended==4.5.2
+PyJWT==2.8.0
+sqlite3==3.39.4
