@@ -34,6 +34,5 @@ if __name__ == "__main__":
     test_string = "hello world"
     print("Hash with default salt:")
     print(manual_hash(test_string))
-    
     print("\nHash with custom salt:")
     print(manual_hash(test_string, salt="my_custom_salt"))

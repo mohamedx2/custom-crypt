@@ -1,0 +1,76 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Custom Crypt: A Secure Cryptography Project}
+\author{Mohamed Ali Hamroun \texttt{(\url{http://mohamedalihamroun.me})}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This report provides an overview of the Custom Crypt project, which aims to implement secure cryptographic algorithms. The project focuses on ensuring data confidentiality and integrity through various encryption techniques.
+\end{abstract}
+
+\section{Introduction}
+In today's digital age, data security is of paramount importance. The Custom Crypt project addresses the need for secure data transmission and storage by implementing robust cryptographic methods.
+
+\section{Project Overview}
+The Custom Crypt project includes various cryptographic algorithms, such as symmetric and asymmetric encryption. The main goal is to provide a user-friendly interface for encrypting and decrypting data securely.
+
+\section{Implementation Details}
+The implementation of the Custom Crypt project is primarily done in Python. The key components include:
+\begin{itemize}
+    \item \textbf{Encryption Algorithms:} Description of the algorithms used (e.g., AES, RSA).
+    \item \textbf{Key Management:} How keys are generated, stored, and managed.
+    \item \textbf{User Interface:} Overview of the command-line interface or graphical user interface.
+\end{itemize}
+
+\section{Hashing Method}
+The Custom Crypt project implements a custom hashing function named \texttt{manual\_hash}. This function is designed to provide a unique hash for input strings, utilizing an optional salt for added uniqueness.
+
+\subsection{Function Definition}
+The function is defined as follows:
+
+\begin{verbatim}
+def manual_hash(input_string: str, salt: str = "") -> int:
+\end{verbatim}
+
+\subsection{Parameters}
+\begin{itemize}
+    \item \textbf{input\_string:} The string that you want to hash.
+    \item \textbf{salt:} An optional string that can be added to the input for uniqueness.
+\end{itemize}
+
+\subsection{Return Value}
+The function returns a 64-bit integer as the resulting hash.
+
+\subsection{Implementation Details}
+The \texttt{manual\_hash} function operates as follows:
+\begin{itemize}
+    \item It concatenates the \texttt{salt} with the \texttt{input\_string}.
+    \item The hash value is initialized with a large prime number: \texttt{0xABCDEF1234567890}.
+    \item The function iterates over each character in the combined string, using the ASCII value of each character to mix into the hash value through bitwise operations.
+\end{itemize}
+
+\subsection{Example Usage}
+The function can be tested with a sample input, such as:
+\begin{verbatim}
+if __name__ == "__main__":
+    test_string = "hello world"
+    print("Hash with default salt:")
+\end{verbatim}
+
+\section{Conclusion}
+The Custom Crypt project successfully implements secure cryptographic techniques to protect sensitive data. Future work may include enhancing the user interface and adding more algorithms.
+
+\section{References}
+\begin{thebibliography}{9}
+\bibitem{crypto}
+    Cryptography and Network Security: Principles and Practice, William Stallings.
+\end{thebibliography}
+
+\end{document}
